@@ -12,7 +12,7 @@ class App extends Component{
             <div className='container'>
               <NavbarBrand href='/'>
                 Ristorante Con Fusion
-
+                  
               </NavbarBrand>
             </div>
           </Navbar>

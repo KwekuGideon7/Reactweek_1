@@ -1,0 +1,16 @@
+.media{
+    height: 150px;
+}
+.media-heading{
+    padding-top: 10px;
+}
+.media-object{
+    float: left;
+    margin: 10px;
+}
+li{
+    list-style-type: none;
+}
+.container{
+    width: 80%;
+}
