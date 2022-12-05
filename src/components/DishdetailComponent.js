@@ -10,14 +10,30 @@ class Dishdetail extends Component {
         };
 
     }
+    onDishSelect(dish){
+        this.setState({DishdetailComponent: dish});
+    }
     renderComments(dish) {
         if (dish != null) {
+            const comments = dish.comments.map((comment) => <div key={comment.id}>
+                <p>
+                {comment.author}
+                </p>
+                <p>
+                {comment.date}
+
+                </p>
+                <p>
+                    {comment.comment}
+                </p>
+                </div>)
             return (
-                <Card className='col-12 col-md-5'>
+                <Card className='col-12 col-md fcard'>
                     <CardBody>
                         <CardText>
-                            {dish.comments}
+                            {comments}
                         </CardText>
+
                     </CardBody>
                 </Card>
             );
@@ -37,7 +53,6 @@ class Dishdetail extends Component {
               <div key={dish.id} className="col-12 col-md-5 m-1">
                 <Card onClick={() => this.onDishSelect(dish)}>
                 <CardTitle> {dish.name}</CardTitle>
-                <CardText> {dish.comments} </CardText>
                 </Card>
               </div>
             );
@@ -49,7 +64,7 @@ class Dishdetail extends Component {
                 {menu}
             </div>
             <div className='row'>
-              {this.renderDish(this.state.DishdetailComponent)}
+              {this.renderComments(this.state.DishdetailComponent)}
 
             </div>
           </div>

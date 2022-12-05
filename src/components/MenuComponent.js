@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
+import Dishdetail from './DishdetailComponent';
+import { DISHES } from '../shared/dishes';
 
 
 class Menu extends Component {
     constructor(props) {
         super(props);
         this.state = {
-              DishdetailComponent: null
+              DishdetailComponent: null, 
+              dishes: DISHES
         };
         console.log('Menu Component constructor is involved')
     }
@@ -31,7 +34,9 @@ class Menu extends Component {
                   {dish.description}
                 </CardText>
                </CardBody>
+               <Dishdetail dishes={this.state.dishes}/>
             </Card>
+            
           );
         }
         else{
